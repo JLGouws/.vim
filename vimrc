@@ -53,9 +53,40 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-set tabstop=2
+set exrc
+set guicursor=
+set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set relativenumber
 set number
-set cindent
+set smartindent
+set nohlsearch
+set hidden
+set noerrorbells
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set scrolloff=10
+set colorcolumn=80
+set signcolumn=yes
+set cmdheight=2
+
+"Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'gruvbox-community/gruvbox'
+"Plug 'jremmen/vim-ripgrep'
+"Plug 'tpope/vim-fugitive'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'vim-utils/vim-man'
+"Plug 'lyuts/vim-rtags'
+"Plug 'https://github.com/ycm-core/YouCompleteMe'
+"Plug 'mbbill/undotree'
+
+call plug#end()
+
+colorscheme gruvbox
